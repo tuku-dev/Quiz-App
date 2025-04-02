@@ -1,8 +1,36 @@
 @import "tailwindcss";
+@import "../public/Outfit/stylesheet.css";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  --font-family: "Outfit", sans-serif;
+  --pink: #b92b5d;
+  --blue: #373052;
+}
+
+.outfit {
+  font-family: "Outfit";
+}
+* {
+  font-family: var(--font-family);
+}
+.text-blue {
+  color: #373052;
+}
+.bg-blue {
+  background: #373052;
+}
+.text-pink {
+  color: #b92b5d;
+}
+.bg-pink {
+  background: #b92b5d;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 html,
