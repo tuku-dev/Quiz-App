@@ -1,14 +1,8 @@
 import { useState } from "react";
 import Logo from "~/components/icons/logo";
-import type { Route } from "./+types/home";
 import Rules from "./Rules";
+import { useNavigate } from "react-router";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
 const topics = [
   "Javascript Basic",
   "Angular Basic",
@@ -24,12 +18,14 @@ export default function Home({ onStart }: HomeProps) {
   const [fullName, setFullName] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("");
   const [rules, setRules] = useState(false);
+  const navigate = useNavigate();
 
   const handleStart = () => {
     if (fullName && selectedTopic) {
-      onStart({ fullName, selectedTopic });
+      // onStart({ fullName, selectedTopic });
       let userData = { name: fullName, topic: selectedTopic };
       localStorage.setItem("userData", JSON.stringify(userData));
+      navigate("/quiz");
     }
   };
   const openRules = (data: boolean) => {
